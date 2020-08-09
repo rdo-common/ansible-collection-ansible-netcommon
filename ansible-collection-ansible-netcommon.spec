@@ -18,6 +18,7 @@ URL:            %{ansible_collection_url}
 Source:         https://github.com/ansible-collections/ansible.netcommon/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  ansible >= 2.9.10
+Requires:       ansible >= 2.9.10
 
 BuildArch:      noarch
 
