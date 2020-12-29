@@ -2,7 +2,7 @@
 %global collection_name netcommon
 
 Name:           ansible-collection-%{collection_namespace}-%{collection_name}
-Version:        1.1.2
+Version:        1.4.1
 Release:        1%{?dist}
 Summary:        Ansible Network Collection for Common Code
 
@@ -29,7 +29,7 @@ BuildArch:      noarch
 %autosetup -n ansible.netcommon-%{version}
 sed -i -e '/version:/s/null/%{version}/' galaxy.yml
 find -type f ! -executable -type f -name '*.py' -print -exec sed -i -e '1{\@^#!.*@d}' '{}' +
-rm -vr tests/integration bindep.txt .yamllint
+rm -vr tests/integration bindep.txt .yamllint changelogs/fragments/.keep
 find -type f -name '.gitignore' -print -delete
 
 %build
@@ -44,5 +44,8 @@ find -type f -name '.gitignore' -print -delete
 %{ansible_collection_files}
 
 %changelog
+* Tue Dec 29 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 1.4.1-1
+- Update to 1.4.1
+
 * Sat Aug 08 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 1.1.2-1
 - Initial package
