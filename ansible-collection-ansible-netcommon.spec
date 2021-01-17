@@ -3,7 +3,7 @@
 
 Name:           ansible-collection-%{collection_namespace}-%{collection_name}
 Version:        1.4.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ansible Network Collection for Common Code
 
 # plugins/module_utils/compat/ipaddress.py: Python Software Foundation License version 2
@@ -18,7 +18,6 @@ URL:            %{ansible_collection_url}
 Source:         https://github.com/ansible-collections/ansible.netcommon/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  ansible >= 2.9.10
-Requires:       ansible >= 2.9.10
 
 BuildArch:      noarch
 
@@ -44,6 +43,9 @@ find -type f -name '.gitignore' -print -delete
 %{ansible_collection_files}
 
 %changelog
+* Sat Jan 16 2021 Kevin Fenzi <kevin@scrye.com> - 1.4.1-2
+- Rebuild for new ansible-generator and allow to be used with ansible-base-2.10.x
+
 * Tue Dec 29 2020 Igor Raits <ignatenkobrain@fedoraproject.org> - 1.4.1-1
 - Update to 1.4.1
 
