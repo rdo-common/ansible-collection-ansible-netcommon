@@ -2,8 +2,8 @@
 %global collection_name netcommon
 
 Name:           ansible-collection-%{collection_namespace}-%{collection_name}
-Version:        1.4.1
-Release:        3%{?dist}
+Version:        1.5.0
+Release:        1%{?dist}
 Summary:        Ansible Network Collection for Common Code
 
 # plugins/module_utils/compat/ipaddress.py: Python Software Foundation License version 2
@@ -43,6 +43,9 @@ find -type f -name '.gitignore' -print -delete
 %{ansible_collection_files}
 
 %changelog
+* Thu Feb 04 2021 Igor Raits <ignatenkobrain@fedoraproject.org> - 1.5.0-1
+- Update to 1.5.0
+
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.4.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
