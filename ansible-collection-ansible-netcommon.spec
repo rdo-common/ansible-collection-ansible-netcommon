@@ -3,7 +3,7 @@
 
 Name:           ansible-collection-%{collection_namespace}-%{collection_name}
 Version:        2.2.0
-Release:        1%{?dist}
+Release:        1.1%{?dist}
 Summary:        Ansible Network Collection for Common Code
 
 # plugins/module_utils/compat/ipaddress.py: Python Software Foundation License version 2
@@ -17,6 +17,8 @@ License:        GPLv3+ and BSD and Python
 URL:            %{ansible_collection_url}
 Source:         https://github.com/ansible-collections/ansible.netcommon/archive/%{version}/%{name}-%{version}.tar.gz
 
+BuildRequires: /usr/lib/rpm/macros.d/macros.ansible
+BuildRequires: openstack-macros
 BuildRequires:  ansible >= 2.9.10
 
 BuildArch:      noarch
@@ -43,6 +45,9 @@ find -type f -name '.gitignore' -print -delete
 %{ansible_collection_files}
 
 %changelog
+* Mon Oct 11 2021 Alfredo Moralejo <amoralej@redhat.com> - 2.2.0-1.1
+- Rebuild with updated ansible-macros to support ansible-core
+
 * Thu Jul 22 2021 Sagi Shnaidman <sshnaidm@redhat.com> - 2.2.0-1
 - Update to 2.2.0
 
